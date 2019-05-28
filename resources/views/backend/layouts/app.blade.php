@@ -52,6 +52,7 @@
 <script src="{!! asset(mix('js/manifest.js')) !!}" ></script>
 <script src="{!! asset(mix('js/vendor.js')) !!}"></script>
 <script src="{!! asset(mix('js/backend.js')) !!}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
 @stack('after-scripts')
 </body>
 </html>

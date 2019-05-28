@@ -15,6 +15,35 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col">
+
+            <div class="card">
+                <div class="card-header">
+                    Form Pencarian
+                </div>
+
+                <div class="card-body">
+
+                    <form method="post" action="{{ route('admin.mahasiswacari.show') }}">
+                        <div class="form-row">
+                            {{ csrf_field() }}
+                            <div class="col-md-2">
+                                <label for="keyword" class="col-form-label">Pencarian Mahasiswa </label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" name="keyword" id="keyword" class="form-control mb-2 mr-sm-2"
+                                       value="@if(isset($keyword)) {{ $keyword }} @endif"
+                                       placeholder="Inputkan keyword berdasarkan nama atau nim"/>
+                            </div>
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary mb-2 btn-block"><i class="fa fa-search"></i> Cari
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
             <div class="card">
 
                 {{-- CARD HEADER--}}
@@ -24,21 +53,6 @@
 
                 {{-- CARD BODY--}}
                 <div class="card-body">
-
-                    <div class="row justify-content-end">
-                        <div class="col-md-6 text-right">
-                            <form method="post" action="{{ route('admin.mahasiswacari.show') }}" class="form-inline">
-                                {{ csrf_field() }}
-                                <input type="text" name="keyword" class="form-control" value="@if(isset($keyword)) {{ $keyword }} @endif" placeholder="Masukkan Keyword" />
-                                <input type="submit" name="submit" class="btn btn-primary" value="Cari" />
-                            </form>
-                        </div>
-                        <div class="col-md-6 justify-content-end">
-                            <div class="row justify-content-end">
-                                {{ $mahasiswas->links() }}
-                            </div>
-                        </div>
-                    </div>
 
                     <table class="table table-striped">
                         <thead>

@@ -10,4 +10,8 @@ class PenelitianUser extends Model
     protected $guarded = [];
 
     // Tambahkan Kode yang diperlukan dibawah ini
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
